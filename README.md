@@ -22,6 +22,6 @@ No presente repositório, foco em problemas dos seguintes conteúdos:
 - Listas circulares;
 - Árvores binárias de busca: consulta e inserção;
 - Árvores binárias de busca: inserção e remoção;
-- Árvores binárias de busca: caminhaments;
+- Árvores binárias de busca: caminhamentos;
 - Árvores AVL;
 - Tabelas Hash.
