@@ -11,9 +11,13 @@ public class App {
         scanner.close();
         qtdHorasIniciais = calcQtdHora(horaInicio);
         qtdHorasFinais = calcQtdHora(horaFim);
-        tempoTotal = duracaoDoJogo(qtdHorasIniciais, qtdHorasFinais);
-        horasJogando = formatoHora(tempoTotal);
-        System.out.println("O JOGO DUROU " + horasJogando);     
+        try {
+            tempoTotal = duracaoDoJogo(qtdHorasIniciais, qtdHorasFinais);
+            horasJogando = formatoHora(tempoTotal);
+            System.out.println("O JOGO DUROU " + horasJogando);
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+        }     
     }
     public static double calcQtdHora(String horario) {
         String[] partes = horario.split(":");
@@ -25,30 +29,18 @@ public class App {
         double horaTotal = hora + minutoParaHora + segundoParaHora;
         return horaTotal;
     }
-    public static double duracaoDoJogo(double qtdHorasIniciais, double qtdHorasFinais) {
-        double tempoTotal=0, aux;
-        if(qtdHorasIniciais < 12.00 && qtdHorasFinais > 12){
-            tempoTotal += (qtdHorasFinais-qtdHorasIniciais);
-        } else if (qtdHorasIniciais > 12.00 && qtdHorasFinais < 12.00) {
-            aux = 24.00 - qtdHorasIniciais;
-            tempoTotal += (aux+qtdHorasFinais);
-        } else if (qtdHorasIniciais < 12.00 && qtdHorasFinais < 12.00 && qtdHorasFinais > qtdHorasIniciais) {
-            tempoTotal += (qtdHorasFinais-qtdHorasIniciais);
-        } else if (qtdHorasIniciais < 12.00 && qtdHorasFinais < 12.00 && qtdHorasFinais < qtdHorasIniciais) {
-            aux = 24.00 - qtdHorasIniciais;
-            tempoTotal += (aux+qtdHorasFinais);
-        } else if(qtdHorasIniciais > 12.00 && qtdHorasFinais > 12.00 && qtdHorasFinais > qtdHorasIniciais) {
-             tempoTotal += (qtdHorasFinais-qtdHorasIniciais);
-        } else if(qtdHorasIniciais > 12.00 && qtdHorasFinais > 12.00 && qtdHorasFinais < qtdHorasIniciais) {
-            aux = 24.00 - qtdHorasIniciais;
-            tempoTotal += aux;
-            aux = 24.00 - 12.00;
-            tempoTotal += aux;
-            aux = qtdHorasFinais - 12.00;
-            tempoTotal += aux; 
-        } else if (qtdHorasFinais == qtdHorasIniciais) {
+    public static double duracaoDoJogo (double qtdHorasIniciais, double qtdHorasFinais) throws Exception{
+        double tempoTotal;
+        if(qtdHorasFinais < qtdHorasIniciais) 
+            qtdHorasFinais += 24.00;
+        tempoTotal = qtdHorasFinais - qtdHorasIniciais;
+        
+        if(tempoTotal == 0.00) 
             tempoTotal = 24.00;
-        }       
+        else if (tempoTotal < 1.00 || tempoTotal > 24.00) {
+            throw new Exception("Tempo inválido! Duração mínima de 1h e máxima de 24h");
+        }    
+        
         return tempoTotal;
     }
 
