@@ -16,7 +16,7 @@ public class App {
             horasJogando = formatoHora(tempoTotal);
             System.out.println("O JOGO DUROU " + horasJogando);
         } catch (Exception e) {
-            System.out.println("Erro: " + e.getMessage());
+            System.out.println(e.getMessage());
         }     
     }
     public static double calcQtdHora(String horario) {
