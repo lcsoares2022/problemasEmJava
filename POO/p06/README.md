@@ -5,7 +5,7 @@ válidas). Em seguida, mostrar o valor das áreas dos dois triângulos e dizer q
 
 ## Exemplo
 
-![Alt text](imagens/p06.png)
+![Alt text](../../imagens/p06.png)
 
 
 
