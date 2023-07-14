@@ -5,7 +5,6 @@ import classes.Triangle;
 public class App {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
-		System.out.println("teste");
 		double p, areaX, areaY;
 		Scanner sc = new Scanner(System.in);
         Triangle x, y;
