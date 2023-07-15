@@ -4,4 +4,4 @@ Fazer um programa para ler o nome de um aluno e as três notas que ele obteve no
 
 ## Exemplo
 
-![Alt text](../../imagens/img10.png)
+![Alt text](../../imagens/img02.png)
