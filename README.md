@@ -4,7 +4,7 @@ No presente repositório, foco em problemas dos seguintes conteúdos:
 
 - Estruturas de controle;
 - Programação Orientada a Objetos;
-- Vetores e matrizez;
+- Vetores e matrizes;
 - Construtores, sobrecarga e encapsulamento;
 - Comportamento de memória, arrays, listas (básico);
 - Tópicos especiais em Java;
