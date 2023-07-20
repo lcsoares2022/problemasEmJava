@@ -49,11 +49,9 @@ public class Conta {
     public String toString() {
         return "Account "
         + getNumConta()
-        + ", "
-        + "Holder: "
+        + ", Holder: "
         + getName()
-        + ", "
-        + "Balance: $ "
+        + ", Balance: $ "
         + String.format("%.2f",getSaldo());
     }
 }
