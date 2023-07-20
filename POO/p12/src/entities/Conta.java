@@ -5,10 +5,10 @@ public class Conta {
     private String name;
     private double saldo;
 
-    public Conta(int numConta, String name, double saldo) {
+    public Conta(int numConta, String name, double depositoInicial) {
         this.numConta = numConta;
         this.name = name;
-        this.saldo = saldo;
+        depositar(depositoInicial);
     }
 
     public Conta(int numConta, String name) {
