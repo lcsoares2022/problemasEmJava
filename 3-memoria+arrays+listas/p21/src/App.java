@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        int soma=0, qtdPares=0;
         Scanner sc = new Scanner(System.in);
+        int N, soma=0, qtdPares=0;
         System.out.print("Quantos elementos vai ter o vetor? ");
-        int N = sc.nextInt();
+        N = sc.nextInt();
         int[] vect = new int[N];
 
         for(int i = 0; i < vect.length; i++) {
