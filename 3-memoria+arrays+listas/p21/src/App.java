@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         int soma=0, qtdPares=0;
-        double media;
         Scanner sc = new Scanner(System.in);
         System.out.print("Quantos elementos vai ter o vetor? ");
         int N = sc.nextInt();
