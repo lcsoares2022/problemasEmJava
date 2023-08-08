@@ -19,6 +19,7 @@ public class App {
             sc.nextLine();
             System.out.print("Genero da " + (i+1) + "a pessoa: ");
             generos[i] = sc.next().charAt(0);
+            
             if(alturas[i] > alturas[maiorAltura])
                 maiorAltura = i;
             else if (alturas[i] < alturas[menorAltura]) 
