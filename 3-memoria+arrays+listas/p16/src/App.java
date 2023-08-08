@@ -24,7 +24,7 @@ public class App {
             double altura = sc.nextDouble();
             pessoas[i] = new Pessoa(nome, idade, altura);
             
-            somaAltura += pessoas[i].getAltura();
+            somaAltura += pessoas[i].getAltura(); //importante dividir cada propósito em um loop. Aqui eu cometi a má prática de colocar tudo em um mesmo loop. 
             if(pessoas[i].getIdade() < 16)
                 menor16++;
         }
