@@ -1,5 +1,6 @@
 package entities;
 
+
 public class Funcionario {
     private int id;
     private String nome;
@@ -10,15 +11,7 @@ public class Funcionario {
         this.nome = nome;
         this.salario = salario;
     }
-
-    public void aumentarSalario(double aumento) {
-        double decimal;
-
-        decimal = aumento / 100.00 + 1;
-        salario = salario*decimal;
-    }
-    
-                
+               
     public int getId() {
         return this.id;
     }
@@ -38,5 +31,18 @@ public class Funcionario {
     public double getSalario() {
         return this.salario;
     }
+    
+    public void aumentarSalario(double aumento) {
+       double decimal = aumento / 100.00 + 1;
+       salario *= decimal;
+   }
+   
+   public String toString() {
+       return id
+           + ", "
+           + nome
+           + ", R$ "
+           + String.format("%.2f", salario);
+   }
 
 }
