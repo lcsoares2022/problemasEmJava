@@ -1,6 +1,6 @@
-# problemasEmJava
+# Problemas em Java
  
-No presente repositório, foco em problemas dos seguintes conteúdos: 
+Esse repositório é focado em problemas dos seguintes conteúdos:
 
 - Estruturas de controle;
 - Programação Orientada a Objetos;
