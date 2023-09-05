@@ -1,14 +1,16 @@
 package entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class HourContract {
     private LocalDate date;
     private Double valuePerHour;
     private Integer hour;
 
-    public HourContract(LocalDate date, Double valuePerHour, Integer hour) {
-        this.date = date;
+    public HourContract(String date, Double valuePerHour, Integer hour) {
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        this.date = LocalDate.parse(date,fmt);
         this.valuePerHour = valuePerHour;
         this.hour = hour;
     }

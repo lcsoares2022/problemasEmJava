@@ -2,8 +2,10 @@ package entities;
 
 import enums.WorkerLevel;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Worker {
     private String name;
@@ -70,7 +72,23 @@ public class Worker {
     }
 
     public Double income(Integer year, Integer month) {
+        List<HourContract> sameYearAndMonth;
 
+        sameYearAndMonth =
+                contracts.stream().filter(x -> x.getDate().getMonthValue() == month && x.getDate().getYear() == year).collect(Collectors.toList());
+
+        Double aux = 0.0;
+        for(HourContract x : sameYearAndMonth) {
+            aux += x.totalValue();
+        }
+        return aux + getBaseSalary();
+    }
+
+    public String toString() {
+        return "Name: " +
+                this.getName() +
+                "\nDepartment: " +
+                this.getDepartment();
     }
 
 
