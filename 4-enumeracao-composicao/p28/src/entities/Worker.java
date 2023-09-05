@@ -45,7 +45,33 @@ public class Worker {
     }
 
 
+    public Department getDepartment() {
+        return department;
+    }
 
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public List<HourContract> getContracts() {
+        return contracts;
+    }
+
+    private void setContracts(List<HourContract> contracts) {
+        this.contracts = contracts;
+    }
+
+    public void addContract(HourContract contract) {
+        this.contracts.add(contract);
+    }
+
+    public void removeContract(HourContract contract) {
+        this.contracts.remove(contract);
+    }
+
+    public Double income(Integer year, Integer month) {
+
+    }
 
 
 }
