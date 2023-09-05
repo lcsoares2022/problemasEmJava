@@ -5,3 +5,7 @@ mostrar qual foi o salário do funcionário nesse mês, conforme exemplo (próxi
 
 
 ![Exemplo](../../imagens/img24.png)
+
+## Exemplo
+
+![Exemplo](../../imagens/img25.png)
