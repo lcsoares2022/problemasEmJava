@@ -74,11 +74,11 @@ public class Worker {
         sameYearAndMonth =
                 contracts.stream().filter(x -> x.getDate().getMonthValue() == month && x.getDate().getYear() == year).collect(Collectors.toList());
 
-        Double aux = 0.0;
+        Double salary = getBaseSalary();
         for(HourContract x : sameYearAndMonth) {
-            aux += x.totalValue();
+            salary += x.totalValue();
         }
-        return aux + getBaseSalary();
+        return salary;
     }
 
     public String toString() {
