@@ -35,23 +35,24 @@ public class Main {
         int qtdContracts = sc.nextInt();
 
         for(int i = 1; i<=qtdContracts; i++) {
+            sc.nextLine();
             System.out.println("Enter contract #" + i + " data:");
             System.out.print("Date (DD/MM/YYYY): ");
             String date = sc.nextLine();
-            sc.nextLine();
             System.out.print("Value per hour: ");
             Double valuePerHour = sc.nextDouble();
             System.out.print("Duration (hours): ");
             Integer duration = sc.nextInt();
-            sc.nextLine();
             HourContract hourContract = new HourContract(date,valuePerHour,duration);
             worker.addContract(hourContract);
         }
 
+        sc.nextLine();
         System.out.print("\nEnter month and year to calculate income (MM/YYYY): ");
         String dateEmString = sc.nextLine();
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("MM/yyyy");
-        LocalDate dateEmLocalDate = LocalDate.parse(dateEmString, fmt);
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dateEmLocalDate = LocalDate.parse("01/" + dateEmString, fmt);
+        //LocalDate dateEmLocalDate = LocalDate.parse(dateEmString, fmt);
         Double salary = worker.income(dateEmLocalDate.getYear(),dateEmLocalDate.getMonthValue());
 
         System.out.println(worker);

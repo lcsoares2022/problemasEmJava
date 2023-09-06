@@ -88,7 +88,7 @@ public class Worker {
         return "Name: " +
                 this.getName() +
                 "\nDepartment: " +
-                this.getDepartment();
+                this.getDepartment().getName();
     }
 
 
