@@ -59,9 +59,6 @@ public class Worker {
         return contracts;
     }
 
-    private void setContracts(List<HourContract> contracts) {
-        this.contracts = contracts;
-    }
 
     public void addContract(HourContract contract) {
         this.contracts.add(contract);
