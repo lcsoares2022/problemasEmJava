@@ -15,7 +15,6 @@ public class Main {
         System.out.print("Enter department's name: ");
         String department = sc.next();
         sc.nextLine();
-        Department dpt = new Department(department);
 
         System.out.println("Enter worker data:");
         System.out.print("Name: ");
@@ -29,7 +28,7 @@ public class Main {
         System.out.print("Base salary: ");
         Double baseSalary = sc.nextDouble();
 
-        Worker worker = new Worker(name, workerLevel, baseSalary, dpt);
+        Worker worker = new Worker(name, workerLevel, baseSalary, new Department(department));
 
         System.out.print("How many contracts to this worker? ");
         int qtdContracts = sc.nextInt();
@@ -52,7 +51,6 @@ public class Main {
         String dateEmString = sc.nextLine();
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate dateEmLocalDate = LocalDate.parse("01/" + dateEmString, fmt);
-        //LocalDate dateEmLocalDate = LocalDate.parse(dateEmString, fmt);
         Double salary = worker.income(dateEmLocalDate.getYear(),dateEmLocalDate.getMonthValue());
 
         System.out.println(worker);
