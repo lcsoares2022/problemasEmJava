@@ -79,7 +79,7 @@ public class Order {
                 + "Order status: "
                 + this.getStatus().name()
                 + "\n"
-                + this.getClient().toString()
+                + this.getClient()
                 + "\n"
                 + "Order items:"
                 + "\n"
@@ -91,7 +91,7 @@ public class Order {
     public String displayOrderItem() {
         StringBuilder orderItemString = new StringBuilder();
         for(OrderItem orderItem : this.getOrderItems()) {
-            orderItemString.append(orderItem.toString()).append("\n");
+            orderItemString.append(orderItem).append("\n");
         }
         return orderItemString.toString();
     }
