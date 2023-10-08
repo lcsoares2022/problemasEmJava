@@ -48,7 +48,7 @@ public class Main {
             OrderItem orderItem = new OrderItem(quantity,product);
             order.addItem(orderItem);
         }
-
+        System.out.println();
         System.out.println(order);
 
         sc.close();
