@@ -1,4 +1,4 @@
-# Problemas em Java
+# POO em Java
  
 Esse repositório é focado em problemas dos seguintes conteúdos:
 
@@ -15,15 +15,3 @@ Esse repositório é focado em problemas dos seguintes conteúdos:
 - Interfaces;
 - Generics, Set e Map;
 - Programação funcional e expressões lambda;
-- Pesquisa sequencial e binária;
-- Métodos de ordenação;
-- Filas;
-- Pilhas;
-- Listas lineares;
-- Listas duplamente encadeadas;
-- Listas circulares;
-- Árvores binárias de busca: consulta e inserção;
-- Árvores binárias de busca: inserção e remoção;
-- Árvores binárias de busca: caminhamentos;
-- Árvores AVL;
-- Tabelas Hash.
