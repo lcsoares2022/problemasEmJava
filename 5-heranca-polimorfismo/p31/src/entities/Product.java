@@ -7,7 +7,6 @@ public class Product {
 
 
     public Product() {
-
     }
 
     public Product(String name, Double price) {
@@ -20,14 +19,17 @@ public class Product {
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public Double getPrice() {
+
         return price;
     }
 
     public void setPrice(Double price) {
+
         this.price = price;
     }
 
@@ -35,7 +37,7 @@ public class Product {
     public String priceTag() {
         return this.getName()
              + " $ "
-             + this.getPrice();
+             + String.format("%.2f", this.getPrice());
     }
 
 

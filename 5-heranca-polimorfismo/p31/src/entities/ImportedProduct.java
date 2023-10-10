@@ -24,15 +24,20 @@ public final class ImportedProduct  extends Product{
 
     @Override
     public String priceTag() {
-        super.priceTag();
-        return " ("
+
+        return this.getName()
+             + " "
+             + String.format("%.2f",  this.totalPrice())
+             + " ("
              + "Customs fee: $"
-             + this.getCustomsFee();
+             + String.format("%.2f", this.getCustomsFee())
+             + ")";
     }
 
 
     public Double totalPrice() {
-        return 0.0;
+
+        return this.getPrice() + this.getCustomsFee();
     }
 
 

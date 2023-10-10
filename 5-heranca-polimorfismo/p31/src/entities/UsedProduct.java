@@ -7,15 +7,16 @@ public final class UsedProduct extends Product{
 
     private LocalDate manufactureDate;
 
-    private static final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public UsedProduct() {
+
         super();
     }
 
-    public UsedProduct(String name, Double price, LocalDate manufactureDate) {
+    public UsedProduct(String name, Double price, String manufactureDate) {
         super(name, price);
-        this.manufactureDate = manufactureDate;
+        this.manufactureDate = LocalDate.parse(manufactureDate, fmt);
     }
 
 
@@ -33,9 +34,10 @@ public final class UsedProduct extends Product{
         return this.getName()
              + " (used) "
              + "$ "
-             + this.getPrice()
-             + "Manufacture date: "
-             + this.getManufactureDate().format(fmt);
+             + String.format("%.2f", this.getPrice())
+             + " (Manufacture date: "
+             + this.getManufactureDate().format(fmt)
+             + ")";
     }
 
 }
