@@ -9,11 +9,11 @@ acrescentada ao preço final do produto.
 
 > [!WARNING]
 > 
-> Favor Implementar o programa conforme projeto da [Figura 1](#figura 1)
+> Favor Implementar o programa conforme projeto da [Figura 1](#figura-1)
 
-## Figura 1
+## Figura 1 {#Figura-1}
 ![img.png](../../imagens/img31.png)
 
-## Exemplo
+## Exemplo {#Exemplo}
 ![img.png](../../imagens/img32.png)
 
