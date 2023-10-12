@@ -40,7 +40,7 @@ public class Main {
         Double total = 0.0;
         System.out.println("\nTAXES PAID: ");
         for (Pessoa pessoa : pessoas) {
-            System.out.println(pessoa.toString());
+            System.out.println(pessoa);
             total += pessoa.getValorImposto();
         }
 
