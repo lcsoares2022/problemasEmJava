@@ -16,11 +16,17 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Integer roomNumber, String checkin, String checkout)  {
-        exception();
+    public Reservation(Integer roomNumber, String checkin, String checkout) throws DomainException {
+        LocalDate checkinDate = LocalDate.parse(checkin, fmt);
+        LocalDate checkoutDate = LocalDate.parse(checkout, fmt);
+
+        if (checkinDate.isAfter(checkoutDate)) {
+            throw new DomainException("Check-out date must be after check-in date");
+        }
+
         this.roomNumber = roomNumber;
-        this.checkin = LocalDate.parse(checkin, fmt);
-        this.checkout = LocalDate.parse(checkout,fmt);
+        this.checkin = checkinDate;
+        this.checkout = checkoutDate;
     }
 
     public Integer getRoomNumber() {
@@ -38,25 +44,22 @@ public class Reservation {
         return dias;
     }
 
-    public void updateDates(String check_in, String check_out) {
-        LocalDate checkin = LocalDate.parse(check_in, fmt);
-        LocalDate checkout = LocalDate.parse(check_out, fmt);
+    public void updateDates(String check_in, String check_out) throws DomainException {
+        LocalDate checkinDate = LocalDate.parse(check_in, fmt);
+        LocalDate checkoutDate = LocalDate.parse(check_out, fmt);
 
-        exception();
-
-        this.checkin = checkin;
-        this.checkout = checkout;
-    }
-
-
-    public void exception() {
-
-        if(!checkin.isAfter(LocalDate.now()))
+        if (!checkinDate.isAfter(LocalDate.now())) {
             throw new DomainException("Reservation dates for update must be future dates");
+        }
 
-        if(checkin.isAfter(checkout))
+        if (checkinDate.isAfter(checkoutDate)) {
             throw new DomainException("Check-out date must be after check-in date");
+        }
+
+        this.checkin = checkinDate;
+        this.checkout = checkoutDate;
     }
+
 
 
     @Override
