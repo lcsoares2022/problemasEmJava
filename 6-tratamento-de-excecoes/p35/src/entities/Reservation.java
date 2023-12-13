@@ -1,6 +1,6 @@
-package model.entities;
+package entities;
 
-import model.exceptions.DomainException;
+import exceptions.DomainException;
 
 import java.time.LocalDate;
 import java.time.Period;

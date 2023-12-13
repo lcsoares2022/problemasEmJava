@@ -1,7 +1,7 @@
-import model.entities.Reservation;
-import model.exceptions.DomainException;
-import model.utils.InputScannerUtil;
-import model.utils.ReservationInput;
+import entities.Reservation;
+import exceptions.DomainException;
+import utils.InputScannerUtil;
+import utils.ReservationInput;
 
 public class Main {
 
