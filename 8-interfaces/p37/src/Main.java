@@ -27,10 +27,15 @@ public class Main {
         double pricePerDay = sc.nextDouble();
 
         Car car = new Car(modelCar, pricePerHour, pricePerDay);
-        Location location = new Location(car, retirada, retorno);
 
-        System.out.println(location);
-
+        try {
+            Location location = new Location(car, retirada, retorno);
+            System.out.println(location);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+        } finally {
+            sc.close();
+        }
 
     }
 }

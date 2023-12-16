@@ -17,7 +17,7 @@ public class Location {
 
     private static final double IMPOSTO_ATE_100 = 0.20;
     private static final double IMPOSTO_MAIS_DE_100 = 0.15;
-
+  
     private double basicPayment;
 
     private double total;
@@ -97,17 +97,19 @@ public class Location {
     }
 
     public void taxIncrement() {
-        boolean minTotal = total <= 100.00;
-        this.total += calcTax(minTotal);
+        this.total += calcTax();
     }
 
-    public double calcTax(boolean minTotal) {
-        return minTotal ? IMPOSTO_ATE_100 * this.getBasicPayment() : IMPOSTO_MAIS_DE_100 * this.getBasicPayment();
+    public double calcTax() {
+        return this.getBasicPayment() <= 100.00 ? IMPOSTO_ATE_100 * this.getBasicPayment() :
+                IMPOSTO_MAIS_DE_100 * this.getBasicPayment();
     }
 
     public int duration(LocalDateTime retirada, LocalDateTime retorno) {
         Duration duration = Duration.between(retirada, retorno);
-        return round(duration.toHours());
+        long qtdMinutes = duration.toMinutes();
+        double hours = qtdMinutes / 60.00;
+        return round(hours);
     }
 
     public static int round(double duration) {
@@ -121,26 +123,22 @@ public class Location {
     }
 
     public double totalValueBasedOnDailyRate(int durationHours) {
-        Duration duration = Duration.between(retirada, retorno);
-        double durDays = durationHours / 24.00;
-        int days = round(durDays);
-
-        if (durationHours > 24)
+        if (durationHours > 24) {
+            double durDays = durationHours / 24.00;
+            int days = round(durDays);
             return this.getCar().getPRECO_POR_DIA() * days;
+        }
 
         return this.getCar().getPRECO_POR_DIA() * 1;
     }
 
     @Override
     public String toString() {
-        int hourLoc = duration(retirada, retorno);
-        boolean minValue = totalValueBasedOnDailyRate(hourLoc) <= 100.00;
-
         return "INVOICE: "
         + "\nBasic payment: "
         + String.format("%.2f", this.getBasicPayment())
         + "\nTax: "
-        + String.format("%.2f", calcTax(minValue))
+        + String.format("%.2f", calcTax())
         + "\nTotal payment: "
         + String.format("%.2f", this.getTotal());
     }

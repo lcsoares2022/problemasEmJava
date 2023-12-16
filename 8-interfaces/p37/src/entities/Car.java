@@ -8,6 +8,11 @@ public class Car {
 
     private final double PRECO_POR_DIA;
 
+    public Car() {
+        this.PRECO_POR_DIA = 0.0;
+        this.PRECO_POR_HORA = 0.0;
+    }
+
 
     public Car(String model, double precoPorHora, double precoPorDia) {
         this.model = model;
