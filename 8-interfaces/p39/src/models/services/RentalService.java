@@ -10,12 +10,12 @@ public class RentalService {
     private Double pricePerHour;
     private Double pricePerDay;
 
-    private BrazilTaxService brazilTaxService;
+    private TaxService taxService; //atributo resultado da associação
 
-    public RentalService(Double pricePerHour, Double pricePerDay, BrazilTaxService brazilTaxService) {
+    public RentalService(Double pricePerHour, Double pricePerDay, TaxService taxService) {
         this.pricePerHour = pricePerHour;
         this.pricePerDay = pricePerDay;
-        this.brazilTaxService = brazilTaxService;
+        this.taxService = taxService;
     }
 
     public void processInvoice(CarRental carRental) {
@@ -48,11 +48,11 @@ public class RentalService {
         this.pricePerDay = pricePerDay;
     }
 
-    public BrazilTaxService getBrazilTaxService() {
-        return brazilTaxService;
+    public TaxService getBrazilTaxService() {
+        return taxService;
     }
 
-    public void setBrazilTaxService(BrazilTaxService brazilTaxService) {
-        this.brazilTaxService = brazilTaxService;
+    public void setBrazilTaxService(TaxService taxService) {
+        this.taxService = taxService;
     }
 }
