@@ -13,7 +13,6 @@ public class Car {
         this.PRECO_POR_HORA = 0.0;
     }
 
-
     public Car(String model, double precoPorHora, double precoPorDia) {
         this.model = model;
         PRECO_POR_HORA = precoPorHora;
