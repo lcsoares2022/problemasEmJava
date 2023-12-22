@@ -26,8 +26,7 @@ public class ContractService {
         LocalDate portionDate = contract.getDate().plusMonths(1);
 
         for (Double valueQuote : valueQuotes) {
-            Quote quote = new Quote(portionDate, valueQuote);
-            contract.addQuotes(quote);
+            contract.addQuotes(new Quote(portionDate, valueQuote));
             portionDate = portionDate.plusMonths(1);
         }
     }

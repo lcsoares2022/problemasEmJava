@@ -40,6 +40,4 @@ public class Product {
              + String.format("%.2f", this.getPrice());
     }
 
-
-
 }
