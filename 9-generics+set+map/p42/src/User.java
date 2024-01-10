@@ -13,6 +13,15 @@ public class User {
     public User() {
     }
 
+    /**
+     * Construtor de usuário que além de setar os atributos com os devidos valores passados como argumento também
+     * inicializa a lista de cursos utilizando a implementação TreeSet que aplica ordem natural com base no método
+     * compareTo da interface Comparable.
+     * @param id
+     * @param username
+     * @param password
+     * @param profile
+     */
     public User(Integer id, String username, String password, Profile profile) {
         this.username = username;
         this.password = password;
